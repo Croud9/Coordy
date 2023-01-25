@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>598</width>
+    <height>572</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Coordy</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color: white
+}
+QScrollBar:vertical {              
+	background: #e5e5ea;
+	border-radius: 3;
+	border: none;
+	max-width: 8px;
+}
+QScrollBar::handle:vertical {
+	background-color: #196dff;
+    border-radius: 3;
+}
+QScrollBar::handle:vertical:hover {
+	background-color: #3b83ff; 
+    min-height: 0px;
+    border-radius: 3;
+}
+QScrollBar::add-line:vertical {
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical {
+    height: 0 px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical{
+    background: #e5e5ea;
+	border: none;
+}
+
+QScrollBar:horizontal {              
+	background: #e5e5ea;
+	border-radius: 3;
+	border: none;
+	max-height: 8px;
+}
+QScrollBar::handle:horizontal {
+	background-color: #196dff;
+    border-radius: 3;
+}
+QScrollBar::handle:horizontal:hover {
+	background-color: #3b83ff; 
+    min-height: 0px;
+    border-radius: 3;
+}
+QScrollBar::add-line:horizontal {
+    height: 0px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal {
+    height: 0 px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal{
+    background: #e5e5ea;
+	border: none;
+}
+QComboBox QAbstractItemView {
+	background: transparent;
+	border-radius: 6;
+    border: none;
+	outline:0px;
+	selection-background-color: white;
+	selection-color: #196dff;
+    padding: 8 0 8 0;
+}</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: #fff;</string>
+   </property>
+   <widget class="QPushButton" name="btnOpenFile">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>620</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Открыть созданный отчет PDF</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color:rgba(112, 215, 255, 0);
+	color:rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: 5;
+	border-style: outset;
+}
+QPushButton:hover{
+	color: black;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Открыть</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnAddAltitude">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>10</y>
+      <width>231</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Загрузка CSV файла с почасовой выработкой</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color:rgba(112, 215, 255, 0);
+	color:rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: 5;
+	border-style: outset;
+}
+QPushButton:hover{
+	color: black;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Добавление высоты</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnPolygon">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>250</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Загрузка исходного контура .kml</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgba(229,229,234,1);
+	color: #196dff;
+	border: none;
+	border-radius: 12;
+	border-style: outset;
+}
+QPushButton:hover{
+	background-color: #dceaff; 
+}
+QPushButton:pressed{
+	color: rgba(25, 109, 255, 0.7); 
+	border-radius: 12;
+}</string>
+    </property>
+    <property name="text">
+     <string>Загрузить контур</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSaveCsv">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>482</y>
+      <width>250</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Сохранение csv файла для дальнейшего импорта в PVsyst</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #196dff;
+	color: white;
+	border: none;
+	border-radius: 12;
+	border-style: outset;
+}
+QPushButton:hover{
+	background-color: #3b83ff; 
+}
+QPushButton:pressed{
+	color: rgba(255, 255, 255, 0.7);
+	border-radius: 12;
+}</string>
+    </property>
+    <property name="text">
+     <string>Сохранить csv для PVsyst</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnTxt">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>40</y>
+      <width>250</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Загрузка файла .txt с добавленными высотами, с сайта</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: rgba(229,229,234,1);
+	color: #196dff;
+	border: none;
+	border-radius: 12;
+	border-style: outset;
+}
+QPushButton:hover{
+	background-color: #dceaff; 
+}
+QPushButton:pressed{
+	color: rgba(25, 109, 255, 0.7); 
+	border-radius: 12;
+}</string>
+    </property>
+    <property name="text">
+     <string>Загрузить координаты</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>531</width>
+      <height>300</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>true</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+	background-color:rgba(229,229,234,1); 
+	border-radius: 6;
+	border: none;
+	padding: 8 4 8 8;
+
+</string>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustToContents</enum>
+    </property>
+    <property name="transformationAnchor">
+     <enum>QGraphicsView::AnchorUnderMouse</enum>
+    </property>
+    <property name="resizeAnchor">
+     <enum>QGraphicsView::AnchorUnderMouse</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSavePointsPolygon">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>482</y>
+      <width>250</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Сохранение подобранной конфигурации в файл .kml</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color: #196dff;
+	color: white;
+	border: none;
+	border-radius: 12;
+	border-style: outset;
+}
+QPushButton:hover{
+	background-color: #3b83ff; 
+}
+QPushButton:pressed{
+	color: rgba(255, 255, 255, 0.7);
+	border-radius: 12;
+}</string>
+    </property>
+    <property name="text">
+     <string>Сохранить точки + контур</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>31</x>
+      <y>120</y>
+      <width>531</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>5</number>
+    </property>
+    <property name="maximum">
+     <number>200</number>
+    </property>
+    <property name="pageStep">
+     <number>5</number>
+    </property>
+    <property name="tracking">
+     <bool>true</bool>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="invertedAppearance">
+     <bool>false</bool>
+    </property>
+    <property name="invertedControls">
+     <bool>false</bool>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksBelow</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelCountPoint">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>86</y>
+      <width>531</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255,255,255,0); </string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>Количество точек</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnMinStep">
+    <property name="geometry">
+     <rect>
+      <x>27</x>
+      <y>93</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Минимальное число точек</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color:rgba(112, 215, 255, 0);
+	color:rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: 5;
+	border-style: outset;
+}
+QPushButton:hover{
+	color: black;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>min</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnMaxStep">
+    <property name="geometry">
+     <rect>
+      <x>526</x>
+      <y>93</y>
+      <width>41</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+      <stylestrategy>PreferAntialias</stylestrategy>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>Максимальное число точек</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-color:rgba(112, 215, 255, 0);
+	color:rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: 5;
+	border-style: outset;
+}
+QPushButton:hover{
+	color: black;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>max</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labelLoading">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>440</y>
+      <width>531</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgba(112, 215, 255, 0);</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>btnOpenFile</zorder>
+   <zorder>btnAddAltitude</zorder>
+   <zorder>btnPolygon</zorder>
+   <zorder>btnSaveCsv</zorder>
+   <zorder>btnTxt</zorder>
+   <zorder>btnSavePointsPolygon</zorder>
+   <zorder>horizontalSlider</zorder>
+   <zorder>labelCountPoint</zorder>
+   <zorder>btnMinStep</zorder>
+   <zorder>btnMaxStep</zorder>
+   <zorder>labelLoading</zorder>
+   <zorder>graphicsView</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
