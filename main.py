@@ -1,4 +1,3 @@
-# pyuic5 designCoordy.ui -o designCoordy.py
 import sys, webbrowser
 import designCoordy
 import styles_and_animation

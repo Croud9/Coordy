@@ -1,16 +1,8 @@
 from PyQt5.QtCore import QTimer
 
 # перевод дизайна
-# cd "C:\PythonPRJCT\autoReportPdf"
-# pyuic5 app/views/designCalcPV.ui -o app/views/designCalcPV.py
-# pyuic5 app/views/designRepPDF.ui -o app/views/designRepPDF.py
-# pyuic5 app/views/designParsing.ui -o app/views/designParsing.py
-# pyuic5 app/views/designDrawSchemes.ui -o app/views/designDrawSchemes.py
-# pyuic5 app/views/designDrawSchemesTwo.ui -o app/views/designDrawSchemesTwo.py
-# pyuic5 app/views/designDrawStructuralScheme.ui -o app/views/designDrawStructuralScheme.py
-# pyuic5 app/views/designAbout.ui -o app/views/designAbout.py
-# pyinstaller --noconfirm --onefile --console --icon "C:/DEV/PythonPRJCT/larso_in_exe/Data/System/Icons/graficon.ico" --collect-all "aspose"  "C:/DEV/PythonPRJCT/larso_in_exe/app/main.py"
-# pyinstaller --noconfirm --onefile --console --icon "C:/DEV/PythonPRJCT/autoReportPdf/Data/System/Icons/graficon.ico" --collect-all "aspose" --collect-all "transliterate"  "C:/DEV/PythonPRJCT/autoReportPdf/app/main.py"
+# pyuic5 designCoordy.ui -o designCoordy.py
+
 '👌✅❎👍🤟🤘🔥📍🌐 ❌✔✓'
 status_ok = ' ' * 117 +'🔥'
 status_info = "background-color: rgba(229,229,234,1); color:  #196dff;" #; font-weight: bold; #025238
