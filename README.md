@@ -1,4 +1,4 @@
-# Coordy
+![CRD](https://github.com/Croud9/Coordy/assets/61747240/15bfcc29-0ba4-42ef-8f46-cd2da7d9f98c)
 
 GUI приложение для экспорта рельефа из Google Earth и создания csv файла для импорта рельефа в PVsyst
 ## Стек технологий
